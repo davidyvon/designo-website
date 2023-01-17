@@ -3,6 +3,12 @@
 module.exports = {
 	content: ['./app/**/*.{js,jsx,ts,tsx}', './pages/**/*.{js,jsx,ts,tsx}'],
 	theme: {
+		screens: {
+			sm: '320px',
+			md: '768px',
+			lg: '1024px',
+			xl: '1440px',
+		},
 		colors: {
 			peach: '#E7816B',
 			peach_light: '#FFAD9B',
