@@ -1,7 +1,6 @@
 import React from 'react'
 import { storyblokEditable } from '@storyblok/react'
 import NextLink from 'next/link'
-import styles from './Link.module.scss'
 
 type LinkProps = {
 	blok: {
@@ -29,7 +28,7 @@ const Link = ({ blok }: LinkProps): JSX.Element => {
 	const { name, link } = blok
 
 	return (
-		<div className={styles.container} {...storyblokEditable(blok)}>
+		<div {...storyblokEditable(blok)}>
 			{link && (
 				<NextLink
 					href={`${link.linktype === 'story' ? link.story?.url : link.url}`}

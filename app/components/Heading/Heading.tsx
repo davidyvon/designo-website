@@ -1,6 +1,5 @@
 import React from 'react'
 import { storyblokEditable } from '@storyblok/react'
-import styles from './Heading.module.scss'
 
 type HeadingProps = {
 	blok: {
@@ -20,10 +19,8 @@ const Heading = ({ blok }: HeadingProps): JSX.Element => {
 	const Title = Tag as 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p'
 
 	return (
-		<div className={styles.section} {...storyblokEditable(blok)}>
-			<div className={styles.container}>
-				{title && <Title className={styles.title}>{title}</Title>}
-			</div>
+		<div className='grid-container' {...storyblokEditable(blok)}>
+			<div>{title && <Title>{title}</Title>}</div>
 		</div>
 	)
 }
