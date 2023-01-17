@@ -6,12 +6,14 @@ import { storyblokInit, apiPlugin } from '@storyblok/react'
 import Button from '../app/components/Button/Button'
 import Heading from '../app/components/Heading/Heading'
 import Link from '../app/components/Link/Link'
+import Navigation from '../app/components/Navigation/Navigation'
 import Page from '../app/components/Page/Page'
 
 const components = {
 	button: Button,
 	heading: Heading,
 	link: Link,
+	navigation: Navigation,
 	page: Page,
 }
 
