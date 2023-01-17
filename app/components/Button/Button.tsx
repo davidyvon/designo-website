@@ -1,5 +1,4 @@
 import React from 'react'
-import styles from './Button.module.scss'
 
 type ButtonProps = {
 	label: string
@@ -8,7 +7,7 @@ type ButtonProps = {
 
 const Button = ({ label, ...props }: ButtonProps) => {
 	return (
-		<button type='button' className={styles.button} {...props}>
+		<button type='button' {...props}>
 			{label}
 		</button>
 	)
