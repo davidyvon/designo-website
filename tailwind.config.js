@@ -6,8 +6,7 @@ module.exports = {
 		screens: {
 			sm: '320px',
 			md: '768px',
-			lg: '1024px',
-			xl: '1440px',
+			lg: '1440px',
 		},
 		colors: {
 			peach: '#E7816B',
@@ -36,6 +35,12 @@ module.exports = {
 					'letter-spacing': '2px',
 				},
 				'.text-heading-m': {
+					'font-size': '32px',
+					'font-weight': '500',
+					'line-height': '36px',
+					'letter-spacing': '2px',
+				},
+				'.text-heading-s': {
 					'font-size': '20px',
 					'font-weight': '500',
 					'line-height': '26px',
