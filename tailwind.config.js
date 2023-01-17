@@ -17,6 +17,42 @@ module.exports = {
 			black: '#1D1C1E',
 			white: '#FFFFFF',
 		},
+		fontFamily: {
+			sans: ['Jost', 'sans-serif'],
+		},
 	},
-	plugins: [],
+	plugins: [
+		function ({ addUtilities }) {
+			const newUtilities = {
+				'.text-heading-xl': {
+					'font-size': '48px',
+					'font-weight': '500',
+					'line-height': '48px',
+				},
+				'.text-heading-l': {
+					'font-size': '40px',
+					'font-weight': '500',
+					'line-height': '48px',
+					'letter-spacing': '2px',
+				},
+				'.text-heading-m': {
+					'font-size': '20px',
+					'font-weight': '500',
+					'line-height': '26px',
+					'letter-spacing': '5px',
+				},
+				'.text-body': {
+					'font-size': '16px',
+					'font-weight': '400',
+					'line-height': '26px',
+				},
+				'.text-label': {
+					'font-size': '15px',
+					'font-weight': '500',
+					'letter-spacing': '1px',
+				},
+			}
+			addUtilities(newUtilities)
+		},
+	],
 }
