@@ -14,7 +14,7 @@ const components = {
 }
 
 storyblokInit({
-	accessToken: 'AlEInklAkzOS0whHwYUzJwtt', // Replace token with corresponding StoryBlok project
+	accessToken: 'NewLuB5oSenFF6yij6Tm2Att',
 	use: [apiPlugin],
 	components,
 })
