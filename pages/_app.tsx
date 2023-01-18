@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app'
 import '../app/styles/globals.scss'
 
 import { storyblokInit, apiPlugin } from '@storyblok/react'
+import About from '../app/components/About/About'
 import Button from '../app/components/Button/Button'
 import Heading from '../app/components/Heading/Heading'
 import HeadingImage from '../app/components/HeadingImage/HeadingImage'
@@ -12,6 +13,7 @@ import Navigation from '../app/components/Navigation/Navigation'
 import Page from '../app/components/Page/Page'
 
 const components = {
+	about: About,
 	button: Button,
 	heading: Heading,
 	headingImage: HeadingImage,
