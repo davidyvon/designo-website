@@ -1,4 +1,8 @@
-import { SbBlokData, StoryblokComponent } from '@storyblok/react'
+import {
+	SbBlokData,
+	StoryblokComponent,
+	storyblokEditable,
+} from '@storyblok/react'
 import React from 'react'
 
 type MenuProps = {
@@ -15,7 +19,10 @@ const Cards = ({ blok }: MenuProps): JSX.Element => {
 	const { items } = blok
 
 	return (
-		<section className='grid-container my-32 md:my-40'>
+		<section
+			className='grid-container my-32 md:my-40'
+			{...storyblokEditable(blok)}
+		>
 			<div className='col-span-full'>
 				<div className='grid grid-cols-1 lg:grid-cols-3 gap-8'>
 					{items &&
