@@ -5,6 +5,8 @@ import '../app/styles/globals.scss'
 import { storyblokInit, apiPlugin } from '@storyblok/react'
 import About from '../app/components/About/About'
 import Button from '../app/components/Button/Button'
+import Cards from '../app/components/Cards/Cards'
+import CardsItem from '../app/components/Cards/CardsItem'
 import Heading from '../app/components/Heading/Heading'
 import HeadingImage from '../app/components/HeadingImage/HeadingImage'
 import Hero from '../app/components/Hero/Hero'
@@ -15,6 +17,8 @@ import Page from '../app/components/Page/Page'
 const components = {
 	about: About,
 	button: Button,
+	cards: Cards,
+	cardsItem: CardsItem,
 	heading: Heading,
 	headingImage: HeadingImage,
 	hero: Hero,
