@@ -8,6 +8,8 @@ import Button from '../app/components/Button/Button'
 import Cards from '../app/components/Cards/Cards'
 import CardsItem from '../app/components/Cards/CardsItem'
 import Cta from '../app/components/Cta/Cta'
+import Featured from '../app/components/Featured/Featured'
+import FeaturedItem from '../app/components/Featured/FeaturedItem'
 import Heading from '../app/components/Heading/Heading'
 import HeadingImage from '../app/components/HeadingImage/HeadingImage'
 import Hero from '../app/components/Hero/Hero'
@@ -23,6 +25,8 @@ const components = {
 	cards: Cards,
 	cardsItem: CardsItem,
 	cta: Cta,
+	featured: Featured,
+	featuredItem: FeaturedItem,
 	heading: Heading,
 	headingImage: HeadingImage,
 	hero: Hero,
