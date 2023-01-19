@@ -12,6 +12,8 @@ import Heading from '../app/components/Heading/Heading'
 import HeadingImage from '../app/components/HeadingImage/HeadingImage'
 import Hero from '../app/components/Hero/Hero'
 import Link from '../app/components/Link/Link'
+import List from '../app/components/List/List'
+import ListItem from '../app/components/List/ListItem'
 import Navigation from '../app/components/Navigation/Navigation'
 import Page from '../app/components/Page/Page'
 
@@ -25,6 +27,8 @@ const components = {
 	headingImage: HeadingImage,
 	hero: Hero,
 	link: Link,
+	list: List,
+	listItem: ListItem,
 	navigation: Navigation,
 	page: Page,
 }
