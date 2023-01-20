@@ -10,6 +10,7 @@ import CardsItem from '../app/components/Cards/CardsItem'
 import Cta from '../app/components/Cta/Cta'
 import Featured from '../app/components/Featured/Featured'
 import FeaturedItem from '../app/components/Featured/FeaturedItem'
+import Form from '../app/components/Form/Form'
 import Footer from '../app/components/Footer/Footer'
 import Heading from '../app/components/Heading/Heading'
 import HeadingImage from '../app/components/HeadingImage/HeadingImage'
@@ -30,6 +31,7 @@ const components = {
 	cta: Cta,
 	featured: Featured,
 	featuredItem: FeaturedItem,
+	form: Form,
 	footer: Footer,
 	heading: Heading,
 	headingImage: HeadingImage,
