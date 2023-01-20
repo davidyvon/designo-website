@@ -16,6 +16,8 @@ import HeadingImage from '../app/components/HeadingImage/HeadingImage'
 import Hero from '../app/components/Hero/Hero'
 import Link from '../app/components/Link/Link'
 import List from '../app/components/List/List'
+import Location from '../app/components/Location/Location'
+import LocationItem from '../app/components/Location/LocationItem'
 import ListItem from '../app/components/List/ListItem'
 import Navigation from '../app/components/Navigation/Navigation'
 import Page from '../app/components/Page/Page'
@@ -35,6 +37,8 @@ const components = {
 	link: Link,
 	list: List,
 	listItem: ListItem,
+	location: Location,
+	locationItem: LocationItem,
 	navigation: Navigation,
 	page: Page,
 }
