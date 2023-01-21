@@ -67,8 +67,22 @@ const Footer = ({ blok }: FooterProps): JSX.Element => {
 
 				<address className='col-span-full flex flex-col gap-1 text-label not-italic text-white opacity-50 md:col-start-3 md:col-end-6 lg:col-start-5 lg:col-end-8'>
 					{contact && <p className='font-bold'>{contact}</p>}
-					{phone && <a href={`tel:${phone}`}>P: {phone}</a>}
-					{email && <a href={`mailto:${email}`}>M: {email}</a>}
+					{phone && (
+						<a
+							className='transition duration-300 ease hover:text-peach'
+							href={`tel:${phone}`}
+						>
+							P: {phone}
+						</a>
+					)}
+					{email && (
+						<a
+							className='transition duration-300 ease hover:text-peach'
+							href={`mailto:${email}`}
+						>
+							M: {email}
+						</a>
+					)}
 				</address>
 
 				<div className='col-span-full flex justify-center gap-4 md:col-start-6 md:col-end-9 md:self-end md:justify-end lg:col-start-9 lg:col-end-13'>
