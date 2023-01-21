@@ -51,7 +51,7 @@ const Hero = ({ blok }: HeroProps): JSX.Element => {
 				<div className='flex justify-center -mb-40 lg:-mb-10 lg:mt-32'>
 					{image && image.filename && (
 						<Image
-							className='w-[284px] h-auto max-w-[284px] max-h-[573px]'
+							className='w-[284px] h-auto max-w-[284px] max-h-[573px] drop-shadow-[20px_40px_40px_rgba(93,2,2,0.7)]'
 							src={image.filename}
 							alt={image.alt}
 							width={284}
