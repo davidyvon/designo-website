@@ -1,6 +1,6 @@
 import React from 'react'
 import { storyblokEditable } from '@storyblok/react'
-import Image from 'next/image'
+import Map from '../Map/Map'
 
 type LocationItemProps = {
 	blok: {
@@ -9,10 +9,8 @@ type LocationItemProps = {
 		_editable?: string
 
 		imagePosition?: 'left' | 'right'
-		image?: {
-			filename: string
-			alt: '' | string
-		}
+		latitude?: number
+		longitude?: number
 		heading?: string
 		address?: string
 		location?: string
@@ -25,7 +23,8 @@ type LocationItemProps = {
 const LocationItem = ({ blok }: LocationItemProps): JSX.Element => {
 	const {
 		imagePosition,
-		image,
+		latitude,
+		longitude,
 		heading,
 		address,
 		location,
@@ -46,14 +45,21 @@ const LocationItem = ({ blok }: LocationItemProps): JSX.Element => {
 					right ? 'lg:col-start-9 lg:col-end-13' : 'lg:col-start-1 lg:col-end-5'
 				}`}
 			>
-				{image && image.filename && (
-					<Image
+				{latitude && longitude && (
+					<Map
 						className='w-full h-full object-cover md:rounded-2xl'
-						src={image.filename}
-						alt={image.alt}
-						width={350}
-						height={326}
-					/>
+						center={[latitude, longitude]}
+						zoom={12}
+					>
+						{({ TileLayer, Marker, Popup }) => (
+							<>
+								<TileLayer url='https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png' />
+								<Marker position={[latitude, longitude]}>
+									<Popup>Designo Office</Popup>
+								</Marker>
+							</>
+						)}
+					</Map>
 				)}
 			</div>
 

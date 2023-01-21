@@ -1,6 +1,11 @@
-/** @type {import('next').NextConfig} */
+/* eslint-disable @typescript-eslint/no-var-requires */
+/* eslint-disable no-undef */
+/* eslint-disable indent */
 
-// eslint-disable-next-line no-undef
+const path = require('path')
+const CopyPlugin = require('copy-webpack-plugin')
+
+/** @type {import('next').NextConfig} */
 module.exports = {
 	reactStrictMode: true,
 	swcMinify: true,
@@ -17,8 +22,17 @@ module.exports = {
 			test: /\.svg$/i,
 			issuer: /\.[jt]sx?$/,
 			use: ['@svgr/webpack'],
-		})
-
+		}),
+			config.plugins.push(
+				new CopyPlugin({
+					patterns: [
+						{
+							from: 'node_modules/leaflet/dist/images',
+							to: path.resolve(__dirname, 'public', 'leaflet', 'images'),
+						},
+					],
+				})
+			)
 		return config
 	},
 }
