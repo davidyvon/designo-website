@@ -26,8 +26,39 @@ export default function Page({ story }: PageProps) {
 	return (
 		<>
 			<Head>
-				<title>{story ? `Next Starter | ${story.name}` : 'Next Starter'}</title>
-				<meta name='description' content='Next Starter Project' />
+				<title>{story ? `Designo | ${story.name}` : 'Designo'}</title>
+				<meta
+					name='description'
+					content='We are a creative agency that produces lasting results for our clients. We have partnered with many startups, corporations, and nonprofits alike to craft designs that make real impact.'
+				/>
+				<link rel='preconnect' href='https://fonts.googleapis.com' />
+				<link
+					rel='preconnect'
+					href='https://fonts.gstatic.com'
+					crossOrigin=''
+				/>
+				<link
+					href='https://fonts.googleapis.com/css2?family=Jost:wght@400;500&display=swap'
+					rel='stylesheet'
+				/>
+				<link
+					rel='apple-touch-icon'
+					sizes='180x180'
+					href='/favicon/apple-touch-icon.png'
+				/>
+				<link
+					rel='icon'
+					type='image/png'
+					sizes='32x32'
+					href='/favicon/favicon-32x32.png'
+				/>
+				<link
+					rel='icon'
+					type='image/png'
+					sizes='16x16'
+					href='/favicon/favicon-16x16.png'
+				/>
+				<link rel='manifest' href='/favicon/site.webmanifest' />
 			</Head>
 
 			<StoryblokComponent blok={story.content} />

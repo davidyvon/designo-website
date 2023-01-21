@@ -39,7 +39,7 @@ const CardsItem = ({ blok }: MenuProps): JSX.Element => {
 				<NextLink
 					className='group lg:h-full flex flex-col md:flex-row lg:flex-col justify-center lg:justify-between items-center rounded-2xl  overflow-hidden'
 					target={link.target}
-					href={`${link.linktype === 'story' ? link.story?.url : link.url}`}
+					href='#void'
 				>
 					<div className='w-full md:w-1/2 lg:w-full rounded-t-2xl md:rounded-t-none md:rounded-l-2xl lg:rounded-b-none lg:rounded-t-2xl'>
 						{image && image.filename && (

@@ -57,7 +57,9 @@ const Form = ({ blok }: FormProps): JSX.Element => {
 			<div className='col-span-full flex flex-col lg:flex-row justify-center items-center gap-12 py-20 md:px-10 lg:px-24 rounded-2xl bg-peach'>
 				<div className='flex flex-col gap-8 text-center md:text-left lg:w-1/2 text-white'>
 					{heading && (
-						<div className='[&>*]:text-heading-xl'>{render(heading)}</div>
+						<div className='text-heading-m md:text-heading-xl'>
+							{render(heading)}
+						</div>
 					)}
 					{description && (
 						<p className='text-body md:w-1/2 lg:w-full'>{description}</p>

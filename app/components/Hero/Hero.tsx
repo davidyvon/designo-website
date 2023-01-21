@@ -28,13 +28,13 @@ const Hero = ({ blok }: HeroProps): JSX.Element => {
 
 	return (
 		<section
-			className='grid-container px-0 overflow-hidden'
+			className='grid-container overflow-hidden bg-peach md:bg-white'
 			{...storyblokEditable(blok)}
 		>
-			<div className='flex flex-col align-center gap-20 col-start-1 col-end-5 px-6 pt-20 bg-peach md:col-end-9 md:rounded-2xl md:pt-16 md:mx-10 md:px-16 lg:flex-row lg:col-end-13 lg:mx-40 lg:px-24 lg:pt-0'>
-				<article className='flex flex-col gap-6 items-center text-center text-white md:gap-8 lg:py-40 lg:items-start lg:justify-center lg:text-left lg:w-3/5'>
+			<div className='flex flex-col align-center gap-20 col-span-full pt-20 md:rounded-2xl md:pt-16 md:px-20 lg:flex-row lg:px-24 lg:pt-0 bg-peach'>
+				<article className='flex flex-col gap-6 items-center text-center md:gap-8 lg:py-40 lg:items-start lg:justify-center lg:text-left lg:w-3/5 text-white'>
 					{heading && (
-						<div className='[&>*]:text-heading-m md:[&>*]:text-heading-xl'>
+						<div className='text-heading-m md:text-heading-xl'>
 							{render(heading)}
 						</div>
 					)}
@@ -51,7 +51,7 @@ const Hero = ({ blok }: HeroProps): JSX.Element => {
 				<div className='flex justify-center -mb-40 lg:-mb-10 lg:mt-32'>
 					{image && image.filename && (
 						<Image
-							className='w-full h-auto max-w-[284px] max-h-[573px]'
+							className='w-[284px] h-auto max-w-[284px] max-h-[573px] drop-shadow-[20px_40px_40px_rgba(93,2,2,0.7)]'
 							src={image.filename}
 							alt={image.alt}
 							width={284}
