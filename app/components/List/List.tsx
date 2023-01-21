@@ -1,9 +1,9 @@
+import React from 'react'
 import {
 	SbBlokData,
 	StoryblokComponent,
 	storyblokEditable,
 } from '@storyblok/react'
-import React from 'react'
 
 type ListProps = {
 	blok: {
