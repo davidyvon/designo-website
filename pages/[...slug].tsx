@@ -26,8 +26,11 @@ export default function Page({ story }: PageProps) {
 	return (
 		<>
 			<Head>
-				<title>{story ? `Next Starter | ${story.name}` : 'Next Starter'}</title>
-				<meta name='description' content='Next Starter Project' />
+				<title>{story ? `Designo | ${story.name}` : 'Designo'}</title>
+				<meta
+					name='description'
+					content='We are a creative agency that produces lasting results for our clients. We have partnered with many startups, corporations, and nonprofits alike to craft designs that make real impact.'
+				/>
 				<link rel='preconnect' href='https://fonts.googleapis.com' />
 				<link
 					rel='preconnect'
