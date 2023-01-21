@@ -35,12 +35,10 @@ const Cta = ({ blok }: CtaProps): JSX.Element => {
 							{description && <p className='text-body'>{description}</p>}
 						</div>
 
-						<div className=''>
-							{buttons &&
-								buttons.map((button) => (
-									<StoryblokComponent key={button._uid} blok={button} />
-								))}
-						</div>
+						{buttons &&
+							buttons.map((button) => (
+								<StoryblokComponent key={button._uid} blok={button} />
+							))}
 					</div>
 				</div>
 			</div>
