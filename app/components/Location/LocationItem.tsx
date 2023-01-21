@@ -42,7 +42,7 @@ const LocationItem = ({ blok }: LocationItemProps): JSX.Element => {
 			{...storyblokEditable(blok)}
 		>
 			<div
-				className={`col-span-full lg:h-full md:max-h-[326px] lg:max-h-full md:mb-1 lg:mb-0 lg:row-start-1 ${
+				className={`col-span-full md:max-h-[326px] md:mb-1 lg:mb-0 lg:row-start-1 ${
 					right ? 'lg:col-start-9 lg:col-end-13' : 'lg:col-start-1 lg:col-end-5'
 				}`}
 			>
