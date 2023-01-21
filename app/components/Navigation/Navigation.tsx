@@ -6,7 +6,6 @@ import {
 } from '@storyblok/react'
 import NextLink from 'next/link'
 import Image from 'next/image'
-import classNames from 'classnames'
 import Menu from '../Menu/Menu'
 
 type NavigationProps = {
@@ -21,11 +20,9 @@ type NavigationProps = {
 		}
 		links?: SbBlokData[]
 	}
-
-	className?: string
 }
 
-const Navigation = ({ blok, className }: NavigationProps): JSX.Element => {
+const Navigation = ({ blok }: NavigationProps): JSX.Element => {
 	const { logo, links } = blok
 
 	const [openMenu, setOpenMenu] = useState(false)
@@ -33,10 +30,6 @@ const Navigation = ({ blok, className }: NavigationProps): JSX.Element => {
 	const handleMenu = () => {
 		setOpenMenu(!openMenu)
 	}
-
-	const setActiveStyles = classNames(className, {
-		['hidden']: !openMenu,
-	})
 
 	return (
 		<header
@@ -71,10 +64,9 @@ const Navigation = ({ blok, className }: NavigationProps): JSX.Element => {
 					</div>
 
 					<div
-						className={classNames(
-							'flex flex-col gap-8 py-12 px-6 bg-black md:hidden [&>*]:text-white [&>*]:text-2xl',
-							setActiveStyles
-						)}
+						className={`flex flex-col gap-8 py-12 px-6 bg-black md:hidden [&>*]:text-white [&>*]:text-2xl ${
+							!openMenu && 'hidden'
+						}`}
 					>
 						{links &&
 							links.map((link) => (

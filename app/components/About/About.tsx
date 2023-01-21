@@ -1,7 +1,6 @@
 import React from 'react'
 import { storyblokEditable } from '@storyblok/react'
 import { render } from 'storyblok-rich-text-react-renderer-ts'
-import classNames from 'classnames'
 import Image from 'next/image'
 
 type AboutProps = {
@@ -39,7 +38,6 @@ const About = ({ blok }: AboutProps): JSX.Element => {
 	} = blok
 
 	const right = imagePosition === 'right'
-	const left = imagePosition === 'left'
 
 	return (
 		<section
@@ -47,23 +45,17 @@ const About = ({ blok }: AboutProps): JSX.Element => {
 			{...storyblokEditable(blok)}
 		>
 			<div
-				className={classNames(
-					'col-span-full md:col-end-9 rounded-t-2xl lg:row-span-full',
-					{
-						['lg:col-start-8 lg:col-end-13']: right,
-						['lg:col-start-1 lg:col-end-6']: left,
-					}
-				)}
+				className={`col-span-full md:col-end-9 rounded-t-2xl lg:row-span-full ${
+					right ? 'lg:col-start-8 lg:col-end-13' : 'lg:col-start-1 lg:col-end-6'
+				}`}
 			>
 				{imageDesktop && imageDesktop.filename && (
 					<Image
-						className={classNames(
-							'hidden lg:block rounded-t-2xl w-full h-auto object-cover max-h-[640px]',
-							{
-								[' lg:rounded-r-2xl lg:rounded-l-none']: right,
-								[' lg:rounded-l-2xl lg:rounded-r-none']: left,
-							}
-						)}
+						className={`hidden lg:block rounded-t-2xl w-full h-auto object-cover max-h-[640px] ${
+							right
+								? 'lg:rounded-r-2xl lg:rounded-l-none'
+								: 'lg:rounded-l-2xl lg:rounded-r-none'
+						}`}
 						src={imageDesktop.filename}
 						alt={imageDesktop.alt}
 						width={476}
@@ -93,15 +85,11 @@ const About = ({ blok }: AboutProps): JSX.Element => {
 			</div>
 
 			<div
-				className={classNames(
-					'grid-container lg:flex flex-column justify-center items-center lg:px-24 py-20 md:py-16 md:px-0 bg-peachPale rounded-b-2xl col-span-full md:col-end-9 ',
-					{
-						['lg:col-start-1 lg:col-end-8 lg:rounded-l-2xl lg:rounded-r-none']:
-							right,
-						['lg:col-start-6 lg:col-end-13 lg:rounded-l-none lg:rounded-r-2xl']:
-							left,
-					}
-				)}
+				className={`grid-container lg:flex flex-column justify-center items-center lg:px-24 py-20 md:py-16 md:px-0 rounded-b-2xl col-span-full md:col-end-9 bg-peachPale ${
+					right
+						? 'lg:col-start-1 lg:col-end-8 lg:rounded-l-2xl lg:rounded-r-none'
+						: 'lg:col-start-6 lg:col-end-13 lg:rounded-l-none lg:rounded-r-2xl'
+				}`}
 			>
 				<div className='flex flex-col justify-center items-center lg:items-start gap-6 text-center lg:text-left col-start-1 col-end-5 md:col-start-2 md:col-end-8 lg:col-start-2 lg:col-end-12'>
 					{heading && (

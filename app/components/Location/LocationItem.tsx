@@ -1,7 +1,6 @@
 import React from 'react'
 import { storyblokEditable } from '@storyblok/react'
 import Image from 'next/image'
-import classNames from 'classnames'
 
 type LocationItemProps = {
 	blok: {
@@ -36,7 +35,6 @@ const LocationItem = ({ blok }: LocationItemProps): JSX.Element => {
 	} = blok
 
 	const right = imagePosition === 'right'
-	const left = imagePosition === 'left'
 
 	return (
 		<article
@@ -44,13 +42,9 @@ const LocationItem = ({ blok }: LocationItemProps): JSX.Element => {
 			{...storyblokEditable(blok)}
 		>
 			<div
-				className={classNames(
-					'col-span-full lg:h-full md:max-h-[326px] lg:max-h-full md:mb-6 lg:mb-0 lg:row-start-1',
-					{
-						['lg:col-start-9 lg:col-end-13']: right,
-						['lg:col-start-1 lg:col-end-5']: left,
-					}
-				)}
+				className={`col-span-full lg:h-full md:max-h-[326px] lg:max-h-full md:mb-1 lg:mb-0 lg:row-start-1 ${
+					right ? 'lg:col-start-9 lg:col-end-13' : 'lg:col-start-1 lg:col-end-5'
+				}`}
 			>
 				{image && image.filename && (
 					<Image
@@ -64,13 +58,9 @@ const LocationItem = ({ blok }: LocationItemProps): JSX.Element => {
 			</div>
 
 			<div
-				className={classNames(
-					'col-span-full flex flex-col justify-center items-center md:items-start gap-6 text-center md:text-left py-20 px-6 md:px-20 md:rounded-2xl lg:px-24 bg-peachPale',
-					{
-						['lg:col-start-1 lg:col-end-9']: right,
-						['lg:col-start-5 lg:col-end-13']: left,
-					}
-				)}
+				className={`col-span-full flex flex-col justify-center items-center md:items-start gap-6 text-center md:text-left py-20 px-6 md:px-20 md:rounded-2xl lg:px-24 bg-peachPale ${
+					right ? 'lg:col-start-1 lg:col-end-9' : 'lg:col-start-5 lg:col-end-13'
+				}`}
 			>
 				{heading && (
 					<p className='text-heading-m md:text-heading-l text-peach'>

@@ -5,7 +5,6 @@ import {
 	SbBlokData,
 } from '@storyblok/react'
 import Image from 'next/image'
-import classNames from 'classnames'
 
 type ListItemProps = {
 	blok: {
@@ -30,12 +29,9 @@ const ListItem = ({ blok, leftAligned }: ListItemProps): JSX.Element => {
 
 	return (
 		<article
-			className={classNames(
-				'flex flex-col justify-center items-center gap-12',
-				{
-					['md:flex-row md:justify-start lg:flex-col']: leftAligned,
-				}
-			)}
+			className={`flex flex-col justify-center items-center gap-12 ${
+				leftAligned && 'md:flex-row md:justify-start lg:flex-col'
+			}`}
 			{...storyblokEditable(blok)}
 		>
 			<div className='min-w-[202px] w-[202px] h-[202px]'>
@@ -51,13 +47,10 @@ const ListItem = ({ blok, leftAligned }: ListItemProps): JSX.Element => {
 			</div>
 
 			<div
-				className={classNames(
-					'flex flex-col justify-center items-center gap-8 text-grayDark text-center',
-					{
-						['md:text-left md:items-start lg:items-center md:gap-4 lg:gap-8 lg:text-center']:
-							leftAligned,
-					}
-				)}
+				className={`flex flex-col justify-center items-center gap-8 text-grayDark text-center ${
+					leftAligned &&
+					'md:text-left md:items-start lg:items-center md:gap-4 lg:gap-8 lg:text-center'
+				}`}
 			>
 				{heading && <p className='text-heading-s uppercase'>{heading}</p>}
 				{description && <p className='text-body'>{description}</p>}
