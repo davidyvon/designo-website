@@ -39,45 +39,50 @@ const Navigation = ({ blok, className }: NavigationProps): JSX.Element => {
 	})
 
 	return (
-		<header className='grid-container px-0' {...storyblokEditable(blok)}>
-			<nav className='col-start-1 col-end-5 bg-white md:col-end-9 lg:col-end-13'>
-				<div className='flex flex-row justify-between items-center gap-10 py-8 px-6 md:py-16 md:px-10 lg:px-40'>
-					{logo && logo.filename && (
-						<NextLink href={'/'}>
-							<Image
-								className='w-52 h-8 object-contain'
-								src={logo.filename}
-								alt={logo.alt}
-								width={143}
-								height={25}
-							/>
-						</NextLink>
-					)}
+		<header
+			className='grid-container px-0 md:px-10 lg:px-40'
+			{...storyblokEditable(blok)}
+		>
+			<div className='col-span-full'>
+				<nav className='col-span-full bg-white md:col-end-9 lg:col-end-13'>
+					<div className='flex flex-row justify-between items-center gap-10 py-8 px-6 md:px-0 md:py-16'>
+						{logo && logo.filename && (
+							<NextLink href={'/'}>
+								<Image
+									className='w-52 h-8 object-contain'
+									src={logo.filename}
+									alt={logo.alt}
+									width={143}
+									height={25}
+								/>
+							</NextLink>
+						)}
 
-					<div className='hidden flex-row gap-10 ml-auto md:flex'>
+						<div className='hidden flex-row gap-10 ml-auto md:flex'>
+							{links &&
+								links.map((link) => (
+									<StoryblokComponent key={link._uid} blok={link} />
+								))}
+						</div>
+
+						<div onClick={handleMenu} className='ml-auto md:hidden'>
+							<Menu />
+						</div>
+					</div>
+
+					<div
+						className={classNames(
+							'flex flex-col gap-8 py-12 px-6 bg-black md:hidden [&>*]:text-white [&>*]:text-2xl',
+							setActiveStyles
+						)}
+					>
 						{links &&
 							links.map((link) => (
 								<StoryblokComponent key={link._uid} blok={link} />
 							))}
 					</div>
-
-					<div onClick={handleMenu} className='ml-auto md:hidden'>
-						<Menu />
-					</div>
-				</div>
-
-				<div
-					className={classNames(
-						'flex flex-col gap-8 py-12 px-6 bg-black md:hidden [&>*]:text-white [&>*]:text-2xl',
-						setActiveStyles
-					)}
-				>
-					{links &&
-						links.map((link) => (
-							<StoryblokComponent key={link._uid} blok={link} />
-						))}
-				</div>
-			</nav>
+				</nav>
+			</div>
 		</header>
 	)
 }
