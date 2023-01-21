@@ -69,7 +69,7 @@ const Heading = ({ blok }: HeadingProps): JSX.Element => {
 			<div className='grid-container lg:flex flex-column justify-center items-center lg:px-24 py-20 md:py-16 md:px-0 bg-peach text-white rounded-b-2xl lg:rounded-l-2xl lg:rounded-r-none col-span-full md:col-end-9 lg:col-end-8'>
 				<div className='flex flex-col justify-center items-center lg:items-start gap-6 text-center lg:text-left col-start-1 col-end-5 md:col-start-2 md:col-end-8 lg:col-start-2 lg:col-end-12'>
 					{heading && (
-						<div className='[&>*]:text-heading-m md:[&>*]:text-heading-xl'>
+						<div className='text-heading-m md:text-heading-xl'>
 							{render(heading)}
 						</div>
 					)}

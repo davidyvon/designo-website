@@ -70,7 +70,11 @@ const FeaturedItem = ({
 					</div>
 
 					<div className='relative z-10 flex flex-col justify-center items-center gap-4 md:gap-6 text-center text-white'>
-						{heading && <p className='text-heading-l uppercase'>{heading}</p>}
+						{heading && (
+							<p className='text-heading-m md:text-heading-l uppercase'>
+								{heading}
+							</p>
+						)}
 						{label && (
 							<div className='flex flex-row justify-center items-center gap-4'>
 								<p className='text-label uppercase'>{label}</p>

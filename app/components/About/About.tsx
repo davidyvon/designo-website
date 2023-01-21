@@ -105,14 +105,12 @@ const About = ({ blok }: AboutProps): JSX.Element => {
 			>
 				<div className='flex flex-col justify-center items-center lg:items-start gap-6 text-center lg:text-left col-start-1 col-end-5 md:col-start-2 md:col-end-8 lg:col-start-2 lg:col-end-12'>
 					{heading && (
-						<div className='[&>*]:text-heading-m md:[&>*]:text-heading-xl text-peach'>
+						<div className='text-heading-m md:text-heading-l text-peach'>
 							{render(heading)}
 						</div>
 					)}
 					{description && (
-						<div className='[&>*]:text-body text-grayDark'>
-							{render(description)}
-						</div>
+						<div className='text-body text-grayDark'>{render(description)}</div>
 					)}
 				</div>
 			</div>

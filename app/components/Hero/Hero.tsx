@@ -34,7 +34,7 @@ const Hero = ({ blok }: HeroProps): JSX.Element => {
 			<div className='flex flex-col align-center gap-20 col-start-1 col-end-5 px-6 pt-20 bg-peach md:col-end-9 md:rounded-2xl md:pt-16 md:mx-10 md:px-16 lg:flex-row lg:col-end-13 lg:mx-40 lg:px-24 lg:pt-0'>
 				<article className='flex flex-col gap-6 items-center text-center text-white md:gap-8 lg:py-40 lg:items-start lg:justify-center lg:text-left lg:w-3/5'>
 					{heading && (
-						<div className='[&>*]:text-heading-m md:[&>*]:text-heading-xl'>
+						<div className='text-heading-m md:text-heading-xl'>
 							{render(heading)}
 						</div>
 					)}
