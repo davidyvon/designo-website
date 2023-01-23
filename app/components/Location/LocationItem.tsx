@@ -1,6 +1,7 @@
 import React from 'react'
 import { storyblokEditable } from '@storyblok/react'
 import Map from '../Map/Map'
+import Background from './Background'
 
 type LocationItemProps = {
 	blok: {
@@ -64,17 +65,19 @@ const LocationItem = ({ blok }: LocationItemProps): JSX.Element => {
 			</div>
 
 			<div
-				className={`col-span-full flex flex-col justify-center items-center md:items-start gap-6 text-center md:text-left py-20 px-6 md:px-20 md:rounded-2xl lg:px-24 bg-peachPale ${
+				className={`relative overflow-hidden col-span-full flex flex-col justify-center items-center md:items-start gap-6 text-center md:text-left py-20 px-6 md:px-20 md:rounded-2xl lg:px-24 bg-peachPale ${
 					right ? 'lg:col-start-1 lg:col-end-9' : 'lg:col-start-5 lg:col-end-13'
 				}`}
 			>
+				<Background className='absolute bottom-0 left-0' />
+
 				{heading && (
 					<p className='text-heading-m md:text-heading-l text-peach'>
 						{heading}
 					</p>
 				)}
 
-				<div className='flex flex-col md:flex-row justify-center md:justify-start items-center gap-6 md:gap-8'>
+				<div className='relative z-10 flex flex-col md:flex-row justify-center md:justify-start items-center gap-6 md:gap-8'>
 					<address className='flex flex-col items-center md:items-start gap-1 text-label md:w-1/2 not-italic text-grayDark'>
 						{address && <p className='font-bold'>{address}</p>}
 						{location && <p className='text-body'>{location}</p>}

@@ -6,6 +6,7 @@ import {
 } from '@storyblok/react'
 import { render } from 'storyblok-rich-text-react-renderer-ts'
 import Image from 'next/image'
+import Background from './Background'
 
 type HeroProps = {
 	blok: {
@@ -28,11 +29,13 @@ const Hero = ({ blok }: HeroProps): JSX.Element => {
 
 	return (
 		<section
-			className='grid-container overflow-hidden bg-peach md:bg-white'
+			className='grid-container overflow-hidden px-0 md:px-10 lg:px-40 bg-peach md:bg-white'
 			{...storyblokEditable(blok)}
 		>
-			<div className='flex flex-col align-center gap-20 col-span-full pt-20 md:rounded-2xl md:pt-16 md:px-20 lg:flex-row lg:px-24 lg:pt-0 bg-peach'>
-				<article className='flex flex-col gap-6 items-center text-center md:gap-8 lg:py-40 lg:items-start lg:justify-center lg:text-left lg:w-3/5 text-white'>
+			<div className='relative overflow-hidden flex flex-col align-center gap-20 col-span-full pt-20 md:rounded-2xl md:pt-16 px-6 md:px-20 lg:flex-row lg:px-24 lg:pt-0 bg-peach'>
+				<Background className='absolute top-[10%] -right-[20%] md:-right-[20%] lg:-right-[6.5%]' />
+
+				<article className='relative z-10 flex flex-col gap-6 items-center text-center md:gap-8 lg:py-40 lg:items-start lg:justify-center lg:text-left lg:w-3/5 text-white'>
 					{heading && (
 						<div className='text-heading-m md:text-heading-xl'>
 							{render(heading)}

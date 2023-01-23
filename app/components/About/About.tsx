@@ -2,6 +2,7 @@ import React from 'react'
 import { storyblokEditable } from '@storyblok/react'
 import { render } from 'storyblok-rich-text-react-renderer-ts'
 import Image from 'next/image'
+import Background from './Background'
 
 type AboutProps = {
 	blok: {
@@ -85,12 +86,13 @@ const About = ({ blok }: AboutProps): JSX.Element => {
 			</div>
 
 			<div
-				className={`grid-container lg:flex flex-column justify-center items-center lg:px-24 py-20 md:py-16 md:px-0 rounded-b-2xl col-span-full md:col-end-9 bg-peachPale ${
+				className={`relative overflow-hidden grid-container lg:flex flex-column justify-center items-center lg:px-24 py-20 md:py-16 md:px-0 rounded-b-2xl col-span-full md:col-end-9 bg-peachPale ${
 					right
 						? 'lg:col-start-1 lg:col-end-8 lg:rounded-l-2xl lg:rounded-r-none'
 						: 'lg:col-start-6 lg:col-end-13 lg:rounded-l-none lg:rounded-r-2xl'
 				}`}
 			>
+				<Background className='absolute bottom-0 left-0' />
 				<div className='flex flex-col justify-center items-center lg:items-start gap-6 text-center lg:text-left col-start-1 col-end-5 md:col-start-2 md:col-end-8 lg:col-start-2 lg:col-end-12'>
 					{heading && (
 						<div className='text-heading-m md:text-heading-l text-peach'>
