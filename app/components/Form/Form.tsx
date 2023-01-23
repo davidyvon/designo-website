@@ -5,6 +5,7 @@ import {
 	storyblokEditable,
 } from '@storyblok/react'
 import { render } from 'storyblok-rich-text-react-renderer-ts'
+import Background from './Background'
 
 type FormProps = {
 	blok: {
@@ -51,11 +52,13 @@ const Form = ({ blok }: FormProps): JSX.Element => {
 
 	return (
 		<section
-			className='grid-container mb-32 md:mb-40 bg-peach md:bg-white'
+			className='grid-container px-0 md:px-10 lg:px-40 mb-32 md:mb-40 bg-peach md:bg-white'
 			{...storyblokEditable(blok)}
 		>
-			<div className='col-span-full flex flex-col lg:flex-row justify-center items-center gap-12 py-20 md:px-10 lg:px-24 rounded-2xl bg-peach'>
-				<div className='flex flex-col gap-8 text-center md:text-left lg:w-1/2 text-white'>
+			<div className='relative overflow-hidden col-span-full flex flex-col lg:flex-row justify-center items-center gap-12 py-20 px-6 md:px-10 lg:px-24 rounded-2xl bg-peach'>
+				<Background className='absolute -top-1/3 -left-[10%]' />
+
+				<div className='relative z-10 flex flex-col gap-8 text-center md:text-left lg:w-1/2 text-white'>
 					{heading && (
 						<div className='text-heading-m md:text-heading-xl'>
 							{render(heading)}
