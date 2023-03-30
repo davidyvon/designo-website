@@ -2,11 +2,11 @@
 
 A 7 pages website for a fictional design studio
 
-[<img src="./app/assets/readme/preview.png">](https://davidyvon.github.io/)
+[<img src="./app/assets/readme/preview.png">](https://designo.davidyvon.com/)
 
 ## Hi ! 👋
 
-**Thanks for checking out this [project](https://davidyvon.github.io/) !**
+**Thanks for checking out this [project](https://designo.davidyvon.com/) !**
 
 ## General infos
 
